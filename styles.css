@@ -14,6 +14,7 @@ header {
     position: relative;
     height: 100vh; /* Prend toute la hauteur de la fenêtre */
     overflow: hidden;
+    text-shadow: 3px 3px 3px #000;
 }
 
 .background-video {
