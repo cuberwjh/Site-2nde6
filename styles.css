@@ -49,16 +49,14 @@ header {
 
 .content {
     display: flex;
+    flex-direction: column; /* Stack sections vertically */
     margin: 20px;
 }
 
-.left-column {
-    flex: 2; /* Prend plus de place */
-    margin-right: 20px;
-}
-
-.right-column {
-    flex: 1; /* Prend moins de place */
+.left-column, .right-column {
+    flex: none; /* Remove flexible sizing */
+    width: 100%; /* Each section takes full width */
+    margin-bottom: 20px; /* Add spacing between sections */
 }
 
 .about, .agenda, .agenda-si {
@@ -85,4 +83,20 @@ ul li {
 
 ul li:last-child {
     border-bottom: none;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row; /* Revert to horizontal layout on larger screens */
+    }
+    
+    .left-column {
+        flex: 2;
+        margin-right: 20px;
+    }
+
+    .right-column {
+        flex: 1;
+    }
 }
