@@ -15,7 +15,7 @@ const date = document.getElementById("new-task-date");
 
 function envoi_data(event) {
     tache = date.value + " - " + texte.value
-
+    event.preventDefault()
     
 }
 
