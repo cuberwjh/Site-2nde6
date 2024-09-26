@@ -48,6 +48,12 @@ header {
     margin-bottom: 20px;
 }
 
+.sup {
+  position: relative;
+  bottom: 1ex; 
+  font-size: 80%;
+}
+
 .content {
     display: flex;
     flex-direction: column; /* Stack sections vertically */
