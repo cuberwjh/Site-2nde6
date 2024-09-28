@@ -13,7 +13,7 @@ body {
 header {
     font-family: 'Georgia', serif;
     position: relative;
-    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    height: 100vh;
     overflow: hidden;
     text-shadow: 0px 0px 8px #000000;
 }
@@ -43,27 +43,15 @@ header {
     margin-bottom: 20px;
 }
 
-.presentation p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.sup {
-  position: relative;
-  bottom: 1ex; 
-  font-size: 80%;
-}
-
 .content {
     display: flex;
-    flex-direction: column; /* Stack sections vertically */
+    flex-direction: column;
     margin: 20px;
 }
 
 .left-column, .right-column {
-    flex: none; /* Remove flexible sizing */
-    width: 100%; /* Each section takes full width */
-    margin-bottom: 20px; /* Add spacing between sections */
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .about, .agenda, .agenda-si {
@@ -71,7 +59,7 @@ header {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Espacement entre les sections */
+    margin-bottom: 20px;
 }
 
 .about h2, .agenda h2, .agenda-si h2 {
@@ -96,6 +84,7 @@ form {
     margin-top: 20px;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 form input {
@@ -105,7 +94,7 @@ form input {
     border: 1px solid #ccc;
 }
 
-form button{
+form button {
     padding: 8px 12px;
     background-color: #0066cc;
     color: white;
@@ -114,27 +103,33 @@ form button{
     cursor: pointer;
 }
 
-form button :hover{
-    background-color: #005bb5;
+form button:hover {
+    background-color: #004f99;
 }
 
-/* Media query for larger screens */
+/* Responsive */
 @media (min-width: 768px) {
     .content {
-        flex-direction: row; /* Revert to horizontal layout on larger screens */
-    }
-    
-    .left-column {
-        flex: 2;
-        margin-right: 20px;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    .right-column {
-        flex: 1;
+    .left-column, .right-column {
+        width: 48%;
+    }
+}
+
+@media (max-width: 767px) {
+    .left-column, .right-column {
+        width: 100%;
     }
 
-    /*.ajouter-un-devoir {
-        flex: 2;
-    } */
+    form {
+        flex-direction: column;
+        gap: 5px;
+    }
 
+    form input, form button {
+        width: 100%;
+    }
 }
